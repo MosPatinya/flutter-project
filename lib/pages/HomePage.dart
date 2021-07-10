@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/catego.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
 class HomePage extends StatefulWidget {
@@ -25,7 +24,6 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 20,
             ),
-            Catego(),
             carousel(),
           ],
         )));
@@ -128,4 +126,5 @@ class _HomePageState extends State<HomePage> {
       ],
     );
   }
+  
 }
