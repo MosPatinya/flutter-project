@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/accountbutton.dart/login.dart';
 import 'package:flutter_application_1/pages/Account.dart';
 import 'package:flutter_application_1/pages/Favorite.dart';
 import 'package:flutter_application_1/pages/HomePage.dart';
@@ -18,7 +17,6 @@ class _LauncherState extends State<Launcher> {
         HomePage(),
         Favorite(),
         Account(),
-        Login(),
     ];
     List<BottomNavigationBarItem> _menuBar= <BottomNavigationBarItem>[
         BottomNavigationBarItem(

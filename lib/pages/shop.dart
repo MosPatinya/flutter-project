@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/accountbutton.dart/login.dart';
-import 'package:flutter_application_1/pages/shop.dart';
 
-class Account extends StatefulWidget {
-  Account({Key key}) : super(key: key);
+class Shop extends StatefulWidget {
+  Shop ({Key key}) : super(key: key);
 
   @override
-  _AccountState createState() => _AccountState();
+  _ShopState createState() => _ShopState();
 }
 
-class _AccountState extends State<Account> {
+class _ShopState extends State<Shop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,10 +46,10 @@ class ProfileMenu extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Colors.grey[200],
         onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Login()),
-          );
+         // Navigator.push(
+           // context,
+           // MaterialPageRoute(builder: (context) => ),
+        //  );
         },
         child: Row(
           children: [
@@ -110,12 +108,7 @@ class ProfileMenu2 extends StatelessWidget {
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Colors.grey[200],
-        onPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Shop())
-            );
-        },
+        onPressed: () {},
         child: Row(
           children: [
             Icon(Icons.local_grocery_store),

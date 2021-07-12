@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/accountbutton.dart/Register.dart';
+import 'package:flutter_application_1/accountbutton.dart/login.dart';
 
-class Login extends StatefulWidget {
+class Register extends StatefulWidget {
   @override
-  _LoginState createState() => _LoginState();
+  _RegisterState createState() => _RegisterState();
 }
 
-class _LoginState extends State<Login> {
+class _RegisterState extends State<Register> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,7 +52,7 @@ class _LoginState extends State<Login> {
                   labelStyle: TextStyle(
                       fontFamily: "Monsterrat",
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey),
+                      color: Colors.black45),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.red),
                   ),
@@ -69,7 +69,25 @@ class _LoginState extends State<Login> {
                   labelStyle: TextStyle(
                       fontFamily: "Monsterrat",
                       fontWeight: FontWeight.bold,
-                      color: Colors.grey),
+                      color: Colors.black45),
+                  focusedBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(color: Colors.red),
+                  ),
+                ),
+                obscureText: true,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              TextField(
+                decoration: InputDecoration(
+                  hintStyle: TextStyle(color: Colors.grey.shade400),
+                  hintText: "ตัวเลขหรือตัวอักษรอย่างน้อย 8ตัว",
+                  labelText: "Confirm Password",
+                  labelStyle: TextStyle(
+                      fontFamily: "Monsterrat",
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black45),
                   focusedBorder: UnderlineInputBorder(
                     borderSide: BorderSide(color: Colors.red),
                   ),
@@ -80,21 +98,22 @@ class _LoginState extends State<Login> {
           ),
         ),
         SizedBox(height: 30),
-         Padding(
+        Padding(
           padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 10),
           child: FlatButton(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
             color: Colors.red.shade500,
-            onPressed: () {  
-                Navigator.of(context).pushNamed('/account');
+            onPressed: () {
+                MaterialPageRoute materialPageRoute= MaterialPageRoute(builder: (context) => Login());
+                Navigator.of(context).push(materialPageRoute);
             },
             child: Row(
               children: [
-                SizedBox(width: 120),
+                SizedBox(width: 110),
                 Expanded(
                   child: Text(
-                    "LOGIN",
+                    "REGISTER",
                     style: TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
@@ -105,30 +124,6 @@ class _LoginState extends State<Login> {
             ),
           ),
         ),
-        SizedBox(height: 30),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "New to Where are you !",
-              style: TextStyle(fontFamily: "Montserrat"),
-            ),
-            SizedBox(width: 5),
-            InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Register()),
-                  );
-                },
-                child: Text("Register",
-                    style: TextStyle(
-                        color: Colors.red,
-                        fontFamily: "Montserrat",
-                        fontWeight: FontWeight.bold,
-                        decoration: TextDecoration.underline)))
-          ],
-        )
       ]),
     );
   }

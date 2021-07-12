@@ -1,5 +1,8 @@
 import "package:flutter/material.dart";
+import 'package:flutter_application_1/accountbutton.dart/login.dart';
+import 'package:flutter_application_1/pages/Account.dart';
 import 'package:flutter_application_1/pages/launcher.dart';
+import 'package:flutter_application_1/pages/shop.dart';
 
 
 void main() {
@@ -18,6 +21,9 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes:<String,WidgetBuilder> {
         Launcher.routeName: (context) => Launcher(),
+        '/login':(BuildContext context) => new Login(),
+        '/account':(BuildContext context) => new Account(),
+        '/shop':(BuildContext context) => new Shop()
       },
       debugShowCheckedModeBanner: false ,
     );
