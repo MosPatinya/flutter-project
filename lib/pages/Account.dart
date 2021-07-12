@@ -87,7 +87,7 @@ class ProfileMenu1 extends StatelessWidget {
             Icon(Icons.cancel),
             SizedBox(width: 20),
             Expanded(
-              child: Text("ล้างข้อมูล",
+              child: Text("ล้างข้อมูลที่ชื่นชอบ",
                   style: Theme.of(context).textTheme.bodyText1),
             ),
             Icon(Icons.arrow_forward_ios)
@@ -113,8 +113,8 @@ class ProfileMenu2 extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Shop())
-            );
+            MaterialPageRoute(builder: (context) => Shop()),
+          );
         },
         child: Row(
           children: [
@@ -131,6 +131,7 @@ class ProfileMenu2 extends StatelessWidget {
     );
   }
 }
+
 
 class Profile extends StatelessWidget {
   const Profile({
