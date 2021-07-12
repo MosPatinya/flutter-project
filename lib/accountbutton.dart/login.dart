@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/accountbutton.dart/Register.dart';
+import 'package:flutter_application_1/pages/Account.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -87,7 +88,10 @@ class _LoginState extends State<Login> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
             color: Colors.red.shade500,
             onPressed: () {  
-                Navigator.of(context).pushNamed('/account');
+            Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Account()),
+          );
             },
             child: Row(
               children: [
