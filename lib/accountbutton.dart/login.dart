@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/accountbutton.dart/Register.dart';
-import 'package:flutter_application_1/pages/Account.dart';
+import 'package:flutter_application_1/accountbutton.dart/profile.dart';
+
 
 class Login extends StatefulWidget {
   @override
@@ -8,13 +9,20 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
+
+  final formKey = GlobalKey<FormState>();
+  Profilelogin profilelogin = Profilelogin();
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
-          child: Stack(children: [
+          child: Stack(
+            key: formKey,
+            children: [
             Container(
               padding: EdgeInsets.fromLTRB(15, 100, 0, 0),
               child: Text(
@@ -45,7 +53,11 @@ class _LoginState extends State<Login> {
           padding: EdgeInsets.only(top: 35, left: 20, right: 20),
           child: Column(
             children: [
-              TextField(
+              TextFormField(
+                keyboardType: TextInputType.emailAddress,
+                 onSaved:(String email){
+                   profilelogin.email = email;
+                },
                 decoration: InputDecoration(
                   hintStyle: TextStyle(color: Colors.grey.shade400),
                   hintText: "name@example.com",
@@ -62,7 +74,7 @@ class _LoginState extends State<Login> {
               SizedBox(
                 height: 10,
               ),
-              TextField(
+              TextFormField(
                 decoration: InputDecoration(
                   hintStyle: TextStyle(color: Colors.grey.shade400),
                   hintText: "ตัวเลขหรือตัวอักษรอย่างน้อย 8ตัว",
@@ -76,6 +88,9 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 obscureText: true,
+                onSaved: (String password){
+                  profilelogin.password=password;
+                },
               )
             ],
           ),
@@ -88,10 +103,8 @@ class _LoginState extends State<Login> {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
             color: Colors.red.shade500,
             onPressed: () {  
-            Navigator.push(
-            context,
-            MaterialPageRoute(builder: (context) => Account()),
-          );
+              formKey.currentState.save();
+              print("email = ${profilelogin.email} password = ${profilelogin.password}");
             },
             child: Row(
               children: [

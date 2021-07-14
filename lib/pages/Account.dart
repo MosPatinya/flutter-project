@@ -26,7 +26,7 @@ class _AccountState extends State<Account> {
               height: 20,
             ),
             ProfileMenu(),
-            ProfileMenu1(),
+            ProfileMenu4(),
             ProfileMenu2(),
           ],
         ),
@@ -48,7 +48,7 @@ class ProfileMenu extends StatelessWidget {
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Colors.grey[200],
         onPressed: () {
-          Navigator.push(
+        Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => Login()),
           );
@@ -68,9 +68,8 @@ class ProfileMenu extends StatelessWidget {
     );
   }
 }
-
-class ProfileMenu1 extends StatelessWidget {
-  const ProfileMenu1({
+class ProfileMenu4 extends StatelessWidget {
+  const ProfileMenu4({
     Key key,
   }) : super(key: key);
 
@@ -84,10 +83,11 @@ class ProfileMenu1 extends StatelessWidget {
         onPressed: () {},
         child: Row(
           children: [
-            Icon(Icons.cancel),
+            Icon(Icons.account_box_sharp),
             SizedBox(width: 20),
             Expanded(
-              child: Text("ล้างข้อมูลที่ชื่นชอบ",
+              child:
+                  Text("แก้ไขข้อมูล", 
                   style: Theme.of(context).textTheme.bodyText1),
             ),
             Icon(Icons.arrow_forward_ios)
@@ -133,6 +133,7 @@ class ProfileMenu2 extends StatelessWidget {
 }
 
 
+
 class Profile extends StatelessWidget {
   const Profile({
     Key key,
@@ -148,7 +149,7 @@ class Profile extends StatelessWidget {
         children: [
           CircleAvatar(
               radius: 10,
-              backgroundColor: Colors.black,
+              backgroundColor: Colors.red,
               child: CircleAvatar(
                 backgroundImage: AssetImage('assets/images/acc.png'),
                 backgroundColor: Colors.white70,
@@ -159,3 +160,4 @@ class Profile extends StatelessWidget {
     );
   }
 }
+

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/pages/Account.dart';
 import 'package:flutter_application_1/pages/Favorite.dart';
 import 'package:flutter_application_1/pages/HomePage.dart';
-import 'package:flutter_application_1/pages/shop.dart';
 
 class Nav extends StatefulWidget {
   @override
