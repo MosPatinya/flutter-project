@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/Manageplace.dart';
 import 'package:flutter_application_1/pages/addshop.dart';
 
 class Shop extends StatefulWidget {
@@ -46,7 +47,12 @@ class ProfileMenu2 extends StatelessWidget {
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Colors.grey[200],
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Manageplace()),
+          );
+        },
         child: Row(
           children: [
             Icon(Icons.local_grocery_store),
