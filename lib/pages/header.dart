@@ -26,7 +26,7 @@ class _HeaderState extends State<Header> {
       width: 0,
     ),
     borderRadius: const BorderRadius.all(
-      const Radius.circular(4),
+      const Radius.circular(5),
     ),
   );
    return Expanded(
