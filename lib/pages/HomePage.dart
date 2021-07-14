@@ -19,10 +19,11 @@ class _HomePageState extends State<HomePage> {
         body: SingleChildScrollView(
             child: Column(
           children: <Widget>[
-            carousel(),
-            searchBox(),
-            SizedBox(
-              height: 20,
+            Stack(
+              children: [
+                carousel(),
+                searchBox(),
+              ],
             ),
           ],
         )));
@@ -49,7 +50,7 @@ class _HomePageState extends State<HomePage> {
 
   Widget searchBox() {
     return Padding(
-      padding: EdgeInsets.only(top: 0, left: 10, right: 10, bottom: 0),
+      padding: EdgeInsets.only(top: 175, left: 10, right: 10, bottom: 0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
