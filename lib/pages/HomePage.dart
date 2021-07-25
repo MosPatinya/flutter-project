@@ -1,10 +1,8 @@
 import 'dart:ui';
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter_application_1/pages/Food.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -39,10 +37,10 @@ class _HomePageState extends State<HomePage> {
                       image: "assets/images/food-icon2.png",
                       color: Colors.greenAccent,
                       press: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Food()),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(builder: (context) => ),
+                        // );
                       },
                     ),
                     CategoryCard(

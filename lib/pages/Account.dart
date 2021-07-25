@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/accountbutton.dart/login.dart';
+import 'package:flutter_application_1/pages/Edited_user.dart';
 import 'package:flutter_application_1/pages/shop.dart';
 
 class Account extends StatefulWidget {
@@ -7,12 +8,8 @@ class Account extends StatefulWidget {
 
   _AccountState createState() => _AccountState();
 }
-
 class _AccountState extends State<Account> {
-
   @override
- 
-
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -83,7 +80,12 @@ class ProfileMenu4 extends StatelessWidget {
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Colors.grey[200],
-        onPressed: () {},
+        onPressed: () {
+           Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Edited_user()),
+          );
+        },
         child: Row(
           children: [
             Icon(Icons.account_box_sharp),

@@ -1,15 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/showshop.dart';
 
-class Manageplace extends StatefulWidget {
-  Manageplace({Key key}) : super(key: key);
+class Editedplace extends StatefulWidget {
+  Editedplace({Key key}) : super(key: key);
 
   @override
-  _ManageplaceState createState() => _ManageplaceState();
+  _EditedplaceState createState() => _EditedplaceState();
 }
 
-class _ManageplaceState extends State<Manageplace> {
-
+class _EditedplaceState extends State<Editedplace> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,28 +27,36 @@ class _ManageplaceState extends State<Manageplace> {
           builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
             if (!snapshot.hasData) {
               return Center(
-                child: CircularProgressIndicator(),);
+                child: CircularProgressIndicator(),
+              );
             }
             return ListView(
-              children: snapshot.data.docs.map((document){
+              children: snapshot.data.docs.map((document) {
                 return Card(
                   child: Container(
                     margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
                     child: ListTile(
                       leading: CircleAvatar(
-                        radius: 30,
-                        child: FittedBox(child: Text(document["cata"]),
+                        radius: 50,
+                        child: FittedBox(
+                          child: Text(document["cata"]),
                         ),
                       ),
                       title: Text(document["name"]),
                       subtitle: Text(document["cata"]),
-                      trailing: IconButton(icon: Icon(Icons.delete,color: Colors.red,), 
-                      onPressed: ()  {
-                        
-                      
-                      },
+                      trailing: IconButton(
+                        icon: Icon(
+                          Icons.edit,
+                          color: Colors.black,
+                        ),
+                        onPressed: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => Showshop()),
+                          );
+                        },
+                      ),
                     ),
-                  ),
                   ),
                 );
               }).toList(),

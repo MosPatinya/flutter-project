@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/Manageplace.dart';
+import 'package:flutter_application_1/pages/Editedplace.dart';
 import 'package:flutter_application_1/pages/addshop.dart';
+import 'package:flutter_application_1/pages/shopdetail.dart';
+import 'package:flutter_application_1/widgets/Profile.dart';
 
 class Shop extends StatefulWidget {
   Shop({Key key}) : super(key: key);
@@ -50,7 +52,7 @@ class ProfileMenu2 extends StatelessWidget {
         onPressed: () {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => Manageplace()),
+            MaterialPageRoute(builder: (context) => Shopdetail()),
           );
         },
         child: Row(
@@ -115,7 +117,12 @@ class ProfileMenu4 extends StatelessWidget {
       child: FlatButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
         color: Colors.grey[200],
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => Editedplace()),
+            );
+        },
         child: Row(
           children: [
             Icon(Icons.settings_applications_outlined),
@@ -132,29 +139,3 @@ class ProfileMenu4 extends StatelessWidget {
   }
 }
 
-class Profile extends StatelessWidget {
-  const Profile({
-    Key key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 115,
-      width: 115,
-      child: Stack(
-        fit: StackFit.expand,
-        children: [
-          CircleAvatar(
-              radius: 10,
-              backgroundColor: Colors.red,
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/acc.png'),
-                backgroundColor: Colors.white70,
-                radius: 55.0,
-              )),
-        ],
-      ),
-    );
-  }
-}

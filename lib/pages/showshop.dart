@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-class Food extends StatefulWidget {
-  Food({Key key}) : super(key: key);
+class Showshop extends StatefulWidget {
+  Showshop({Key key}) : super(key: key);
 
   @override
-  _FoodState createState() => _FoodState();
+  _ShowshopState createState() => _ShowshopState();
 }
 
-class _FoodState extends State<Food> {
+class _ShowshopState extends State<Showshop> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-       appBar: AppBar(title: Text('FOOD')),
+       appBar: AppBar(title: Text('FAVORITE')),
        body: Center(
          child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
