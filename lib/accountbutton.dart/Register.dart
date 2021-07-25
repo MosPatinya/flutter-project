@@ -12,7 +12,6 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
-  
   final formKey = GlobalKey<FormState>();
   Profilelogin profilelogin = Profilelogin();
   final Future<FirebaseApp> firebase = Firebase.initializeApp();
