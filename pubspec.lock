@@ -99,6 +99,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.2"
+  custom_text:
+    dependency: "direct main"
+    description:
+      name: custom_text
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.5.0"
   fake_async:
     dependency: transitive
     description:
@@ -198,6 +205,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
+  get:
+    dependency: "direct main"
+    description:
+      name: get
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.3.0"
   http:
     dependency: transitive
     description:
@@ -357,6 +371,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.3.0"
+  text_parser:
+    dependency: transitive
+    description:
+      name: text_parser
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.2.0"
   typed_data:
     dependency: transitive
     description:
@@ -387,4 +408,4 @@ packages:
     version: "3.1.0"
 sdks:
   dart: ">=2.12.0 <3.0.0"
-  flutter: ">=1.20.0"
+  flutter: ">=2.2.0"

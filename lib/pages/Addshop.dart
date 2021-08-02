@@ -192,6 +192,7 @@ class _AddshopState extends State<Addshop> {
                                   "facebook": myUser.facebook,
                                 });
                                 formKey.currentState.reset();
+                                Navigator.pop(context);
                               }
                             },
                           ))

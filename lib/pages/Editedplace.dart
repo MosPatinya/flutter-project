@@ -1,10 +1,15 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/pages/showshop.dart';
+import 'package:flutter_application_1/widgets/product_lists.dart';
+import 'package:flutter_application_1/widgets/product_popup.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(Editedplace());
+}
 
 class Editedplace extends StatefulWidget {
-  Editedplace({Key key}) : super(key: key);
-
   @override
   _EditedplaceState createState() => _EditedplaceState();
 }
@@ -14,56 +19,27 @@ class _EditedplaceState extends State<Editedplace> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('จัดการร้านค้า/สถานที่',
-            style: TextStyle(
-              color: Colors.white,
-            )),
+        title: Text('แก้ไขข้อมูลร้านค้า/สถานที่'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () {
+              showModalBottomSheet(
+                  backgroundColor: Color(0x00ffffff),
+                  isScrollControlled: true,
+                  context: context,
+                  builder: (context) {
+                    return ProductPopup();
+                  });
+            },
+          ),
+        ],
         backgroundColor: Colors.red,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: StreamBuilder(
-          stream: FirebaseFirestore.instance.collection("user").snapshots(),
-          builder: (context, AsyncSnapshot<QuerySnapshot> snapshot) {
-            if (!snapshot.hasData) {
-              return Center(
-                child: CircularProgressIndicator(),
-              );
-            }
-            return ListView(
-              children: snapshot.data.docs.map((document) {
-                return Card(
-                  child: Container(
-                    margin: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
-                    child: ListTile(
-                      leading: CircleAvatar(
-                        radius: 50,
-                        child: FittedBox(
-                          child: Text(document["cata"]),
-                        ),
-                      ),
-                      title: Text(document["name"]),
-                      subtitle: Text(document["cata"]),
-                      trailing: IconButton(
-                        icon: Icon(
-                          Icons.edit,
-                          color: Colors.black,
-                        ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(builder: (context) => Showshop()),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                );
-              }).toList(),
-            );
-          },
-        ),
-      ),
+      body: Container(
+        child: ProductLists(),
+      )
     );
   }
 }
+

@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
                         ),
                       ),
                       Container(
-                        padding: EdgeInsets.fromLTRB(350, 170, 0, 0),
+                        padding: EdgeInsets.fromLTRB(340, 170, 0, 0),
                         child: Text(
                           "!",
                           style: TextStyle(
