@@ -59,7 +59,7 @@ class ProductItem extends StatelessWidget {
                   Container(
                       height: 170,
                       width: 160,
-                      child: Image.asset("assets/images/Capture.PNG")),
+                      child: Image.network(product.imageUrl)),
                 ],
               )
             ],

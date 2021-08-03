@@ -17,6 +17,7 @@ class _ProductFormState extends State<ProductForm> {
   TextEditingController name3Controller = TextEditingController();
   TextEditingController categoryController = TextEditingController();
   TextEditingController priceController = TextEditingController();
+  // TextEditingController imageUrlController = TextEditingController();
   @override
   void initState() {
     super.initState();
@@ -27,6 +28,7 @@ class _ProductFormState extends State<ProductForm> {
       name3Controller.text = widget.product.name3;
       categoryController.text = widget.product.category;
       priceController.text = widget.product.price.toString();
+      // imageUrlController.text = widget.product.imageUrl.toString();
     }
   }
 
@@ -38,14 +40,9 @@ class _ProductFormState extends State<ProductForm> {
     name3Controller.dispose();
     categoryController.dispose();
     priceController.dispose();
+    // imageUrlController.dispose();
     super.dispose();
   }
-
-  Widget _showImage() {
-    return Text("Image Here");
-  }
-
-  _getLocalImage() {}
 
   @override
   Widget build(BuildContext context) {
@@ -54,22 +51,27 @@ class _ProductFormState extends State<ProductForm> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(widget.product != null
-                ? 'แก้ไขร้าน ${widget.product.productName}'
-                : 'เพิ่มร้านค้า/สถานที่',style: TextStyle(fontSize:30),),
+            Text(
+              widget.product != null
+                  ? 'แก้ไขร้าน ${widget.product.productName}'
+                  : 'เพิ่มร้านค้า/สถานที่',
+              style: TextStyle(fontSize: 30),
+            ),
             Padding(
               padding: const EdgeInsets.all(32),
               child: Form(
                   child: Column(
                 children: <Widget>[
-                  _showImage(),
                   SizedBox(height: 16),
-                  Text("Create Food",textAlign: TextAlign.center,style: TextStyle(fontSize:30),),
-                  SizedBox(height:16),
+                  //
+                  SizedBox(height: 16),
                   ButtonTheme(
-                    child: RaisedButton(
-                    onPressed: (){},
-                    child: Text('Add Image',style: TextStyle(color: Colors.white),),))
+                      child: RaisedButton(
+                    onPressed: () {
+                      //
+                    },
+                    child: Text('เพิ่มรูปภาพ'),
+                  ))
                 ],
               )),
             ),
@@ -77,7 +79,6 @@ class _ProductFormState extends State<ProductForm> {
               controller: nameController,
               keyboardType: TextInputType.text,
               decoration: InputDecoration(labelText: 'ชื่อร้านค้า'),
-              
             ),
             TextFormField(
               controller: name1Controller,
@@ -195,6 +196,7 @@ class _ProductFormState extends State<ProductForm> {
             name3: name3Controller.text,
             category: categoryController.text,
             price: double.tryParse(priceController.text) ?? 0,
+            // imageUrl: imageUrlController.text,
           ),
         );
         nameController.clear();
@@ -203,6 +205,7 @@ class _ProductFormState extends State<ProductForm> {
         name3Controller.clear();
         categoryController.clear();
         priceController.clear();
+        // imageUrlController.clear();
         Navigator.of(context).pop();
       },
       child: Text(widget.product == null ? 'เพิ่ม' : 'แก้ไข'),
@@ -217,4 +220,6 @@ class _ProductFormState extends State<ProductForm> {
       child: Text('ปิด'),
     );
   }
+  
+
 }

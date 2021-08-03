@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/model/product_model.dart';
 import 'package:flutter_application_1/service/database.dart';
 import 'package:flutter_application_1/widgets/product_item.dart';
+import 'package:get/get.dart';
 
 class ProductLists extends StatelessWidget {
   @override

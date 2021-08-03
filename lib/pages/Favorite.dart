@@ -37,7 +37,6 @@ class ShopF extends StatelessWidget {
   }) : super(key: key);
 
   final CollectionReference<Object> products;
-
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -79,7 +78,7 @@ class ShopF extends StatelessWidget {
                                   height: 170,
                                   width: 160,
                                   child:
-                                      Image.asset("assets/images/Capture.PNG")),
+                                      Image.network(product['imageUrl'])),
                             ],
                           )
                         ],

@@ -7,6 +7,7 @@ class ProductModel {
   String name3;
   String category;
   double price;
+  String imageUrl;
   ProductModel({
     @required this.id,
     @required this.productName,
@@ -15,6 +16,7 @@ class ProductModel {
     @required this.name3,
     @required this.category,
     @required this.price,
+    @required this.imageUrl
   });
   factory ProductModel.fromMap(Map<String, dynamic>product) {
     if (product == null) {
@@ -27,6 +29,7 @@ class ProductModel {
     String name3 = product['name3'];
     String category = product['category'];
     double price = product['price'];
+    String imageUrl = product['imageUrl'];
     return ProductModel (
       id: id,
       productName: productName,
@@ -34,7 +37,8 @@ class ProductModel {
       name2: name2,
       name3: name3,
       category: category,
-      price: price, 
+      price: price,
+      imageUrl: imageUrl, 
       );
   }
   Map<String, dynamic> toMap() {
@@ -46,6 +50,7 @@ class ProductModel {
       'name3' : name3,
       'category' : category,
       'price' : price,
+      'imageUrl' : imageUrl,
     };
   }
 }
